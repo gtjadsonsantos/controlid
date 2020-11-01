@@ -8,7 +8,7 @@ Este documento tem como finalidade apresentar a cli para integração com contro
 
 
 ```yaml
-python3 /config/scripts/controlid/controlid.py <URL> <USERNAME> <SENHA> <ACTION> <PARAMETERS>
+python3 controlid.py <URL> <USERNAME> <SENHA> <ACTION> <PARAMETERS>
 
 ```
 
