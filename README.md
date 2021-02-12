@@ -2,7 +2,7 @@
 
 ## SERVICES AVAILABLE
 
-* **Controlid.open_remote_door**: Open doors Remote
+* **controlid.open_remote_door**: Open doors Remote
 
 
 ```yaml
