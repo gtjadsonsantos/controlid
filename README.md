@@ -1,5 +1,10 @@
 # CONTROL ID
 
+
+## GETTER STARTED
+
+Poste this propety `controlid:` in your configuration file
+
 ## SERVICES AVAILABLE
 
 * **controlid.open_remote_door**: Open doors Remote
