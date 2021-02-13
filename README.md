@@ -1,8 +1,13 @@
 # CONTROL ID
 
+
+## GETTER STARTED
+
+Poste this propety `controlid:` in your configuration file
+
 ## SERVICES AVAILABLE
 
-* **Controlid.open_remote_door**: Open doors Remote
+* **controlid.open_remote_door**: Open doors Remote
 
 
 ```yaml
