@@ -3,7 +3,7 @@
 
 ## GETTER STARTED
 
-Poste this propety `controlid:` in your configuration file
+Paste this property `controlid:` in your configuration file
 
 ## SERVICES AVAILABLE
 
