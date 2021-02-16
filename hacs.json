@@ -1,6 +1,7 @@
 { 
     "name": "controlid",
     "render_readme": "true",
-    "iot_class": ["Local Push"]
+    "iot_class": ["Local Push"],
+    "version": "0.1.0"
 
 }
