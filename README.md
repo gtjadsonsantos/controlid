@@ -52,9 +52,3 @@ This project use license MIT - see file [LICENSE](LICENSE) for more details
     <tr>
     <td align="center"><a href="https://github.com/pauloeduardodarosa"><img src="https://avatars.githubusercontent.com/u/3733250?s=460&u=1f62e3cd067caa8b9eb27ba64794f381e4cb5168&v=4" width="100px;" alt=""/><br /><sub><b>Jadson Santos</b></sub></a><br /><a href="https://github.com/pauloeduardodarosa/controlid/commits?author=pauloeduardodarosa" title="Code">💻</a> <a href="https://github.com/jadson179" title="Design">🎨</a></td>
   <tr>
-
-
-
-
-
- 
