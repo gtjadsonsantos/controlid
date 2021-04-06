@@ -22,8 +22,10 @@ def setup(hass, config):
         "Content-Type": "application/json",
         }
 
-        payload = actions
-
+        payload = {
+            'actions': actions
+        }  
+        
         post("http://"+ip+"/execute_actions.fcgi?session="+auth(ip, username, password), data=json.dumps(payload), headers=headers)
 
 
