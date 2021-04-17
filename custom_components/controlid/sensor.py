@@ -5,11 +5,11 @@ from requests import post
 from homeassistant.components.sensor import PLATFORM_SCHEMA
 from homeassistant.helpers.typing import ConfigType
 from homeassistant.components.sensor import SensorEntity
-import logging
 from typing import  Callable
 from datetime import timedelta
 
 
+import logging
 import voluptuous as vol
 import homeassistant.helpers.config_validation as cv
 from .helper import auth
@@ -70,11 +70,11 @@ class ControlidSensor(SensorEntity):
         return self._state
 
     async def async_update(self):
-        session = await auth(self.ip,self.username,self.password)
+        session = await auth(self._ip,self._username,self._password)
         response = await post("http://{ip}/doors_state.fcgi?session={session}".format(ip=self._ip,session=session)).json() 
 
         for door in response["doors"]:
-            if (door["id"] == int(self.doorid)):
+            if (door["id"] == int(self._doorid)):
                 self._state = door["open"]
         
         
