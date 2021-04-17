@@ -3,7 +3,6 @@
   "name": "controlid",
   "documentation": "https://github.com/jadson179/controlid",
   "issue_tracker": "https://github.com/jadson179/controlid/issues",
-  "dependencies": ["request"],
   "codeowners": ["@jadson179"],
   "version": "0.1.0"
 }

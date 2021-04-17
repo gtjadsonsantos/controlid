@@ -12,7 +12,7 @@ This custom integration permits Home Assistant to communicate with `controlid` c
 ## GETTING STARTED
 
 Paste this property `controlid:` in your configuration file
-## SERVICES AVAILABLE
+## SERVICES
 
 * **controlid.open_remote_door**: Open doors Remote
 
@@ -32,6 +32,21 @@ actions:
     parameters: allow=clockwise or allow=both
 ```
 
+## PLATFORMS
+
+* **sensor**
+
+```yaml
+
+sensor:
+  - platform: controlid
+    ip: 192.168.0.1
+    name: "Your sensor name"
+    username: admin
+    password: admin
+    doorid: "1"
+
+```
 
 [docs api](https://www.controlid.com.br/docs/access-api-pt/acoes/abertura-remota-porta-e-catraca/#exemplo-abrir-rele-idaccessidfitidbox)
 
