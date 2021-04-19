@@ -12,7 +12,7 @@ This custom integration permits Home Assistant to communicate with `controlid` c
 ## GETTING STARTED
 
 Paste this property `controlid:` in your configuration file
-## SERVICES
+## Services
 
 * **controlid.open_remote_door**: Open doors Remote
 
@@ -34,10 +34,36 @@ actions:
 
 ## PLATFORMS
 
-* **sensor**
+### Sensor
+
+The controlid sensor platform allows you get current state door
+
+To use your controlid sensor in your installation, add the following to your `configuration.yaml` file:
+
+**name** string `required`
+
+Define name to your sensor
+
+**icon** string `(optional)`
+
+Define icon for your sensor. By default is `mdi:door`
+
+**username** string `required`
+
+Define username for connection with controller.
+
+**passowrd** string `required`
+
+Define password for connection with at controller.
+
+**doorid** string `required`
+
+Choose doorid for get current value 
+
+
+Example ballow, get the current state of door 1
 
 ```yaml
-
 sensor:
   - platform: controlid
     ip: 192.168.0.1
