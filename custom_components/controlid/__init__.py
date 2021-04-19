@@ -1,17 +1,13 @@
 from requests import post
 import json
 
+from .helper import auth
 from .const import (
     DOMAIN
 )
 
 
 def setup(hass, config):
-    def auth(ip: str, login: str, password: str):
-        response = post("http://"+ip+"/login.fcgi",
-                        data={"login": login, "password": password}).json()
-        return response["session"]
-
     def open_remote_door(call):
         ip = call.data.get("ip", "")
         username = call.data.get("username", "")
