@@ -1,0 +1,15 @@
+default_config:
+
+homeassistant:
+  name: Test Environment (Controlid) 
+
+
+controlid: 
+
+sensor:
+  - platform: controlid
+    ip: 192.168.0.1
+    name: Porta
+    username: admin
+    password: admin
+    doorid: 1
