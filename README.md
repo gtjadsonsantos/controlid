@@ -32,7 +32,7 @@ actions:
     parameters: allow=clockwise or allow=both
 ```
 
-## PLATFORMS
+## Platforms
 
 ### Sensor
 
@@ -40,25 +40,25 @@ The controlid sensor platform allows you get current state door
 
 To use your controlid sensor in your installation, add the following to your `configuration.yaml` file:
 
-**name** string `required`
-
-Define name to your sensor
-
-**icon** string `(optional)`
-
-Define icon for your sensor. By default is `mdi:door`
-
-**username** string `required`
-
-Define username for connection with controller.
-
-**passowrd** string `required`
-
-Define password for connection with at controller.
-
-**doorid** string `required`
-
-Choose doorid for get current value 
+> **name** string `required`
+> 
+> Define name to your sensor
+> 
+> **icon** string `(optional)`
+> 
+> Define icon for your sensor. By default is `mdi:door`
+> 
+> **username** string `required`
+> 
+> Define username for connection with controller.
+> 
+> **passowrd** string `required`
+> 
+> Define password for connection with at controller.
+> 
+> **doorid** string `required`
+> 
+> Choose doorid for get current value 
 
 
 Example ballow, get the current state of door 1
