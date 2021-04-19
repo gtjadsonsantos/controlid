@@ -9,6 +9,7 @@ from typing import  Callable
 from datetime import timedelta
 
 
+
 import logging
 import voluptuous as vol
 import homeassistant.helpers.config_validation as cv
@@ -34,6 +35,8 @@ PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend(
     }
 )
 
+LOGGER = logging.getLogger(__name__)
+
 def setup_platform(hass:HomeAssistant,config:ConfigType, async_add_entities: Callable,discovery_info=None):
 
     name = config.get(CONFIG_NAME)
@@ -42,24 +45,38 @@ def setup_platform(hass:HomeAssistant,config:ConfigType, async_add_entities: Cal
     password = config.get(CONFIG_PASSWORD)
     doorid = config.get(CONFIG_DOORID)
 
-    async_add_entities([ControlidSensor(
+    data = ControlidData(
+        hass=hass,
         name=name,
         ip=ip,
         username=username,
         password=password,
         doorid=doorid
+    )
+
+
+    async_add_entities([ControlidSensor(
+        hass=hass,
+        name=name,
+        ip=ip,
+        username=username,
+        password=password,
+        doorid=doorid,
+        data=data
     )]) 
 
 
 class ControlidSensor(SensorEntity):
 
-    def __init__(self,name:str,ip:str,username:str,password:str,doorid:str):
+    def __init__(self,hass:HomeAssistant,name:str,ip:str,username:str,password:str,doorid:str,data):
         self._state = None
         self._name:str = name
         self._ip:str = ip
         self._username:str = username
         self._password:str = password
         self._doorid:str = doorid
+        self._hass:HomeAssistant = hass
+        self._data:ControlidData = data
 
     @property
     def name(self):
@@ -68,13 +85,25 @@ class ControlidSensor(SensorEntity):
     @property
     def state(self):
         return self._state
-
-    async def async_update(self):
-        session = await auth(self._ip,self._username,self._password)
-        response = await post("http://{ip}/doors_state.fcgi?session={session}".format(ip=self._ip,session=session)).json() 
+    
+    def update(self):
+       self._data.update()
+       self._state = self._data._state
+    
+class ControlidData:
+   def __init__(self,hass:HomeAssistant,name:str,ip:str,username:str,password:str,doorid:str):
+        self._state = None
+        self._name:str = name
+        self._ip:str = ip
+        self._username:str = username
+        self._password:str = password
+        self._doorid:str = doorid
+        self._hass:HomeAssistant = hass
+        
+   def update(self):
+        session =  auth(self._ip,self._username,self._password)
+        response = post("http://{ip}/doors_state.fcgi?session={session}".format(ip=self._ip,session=session)).json() 
 
         for door in response["doors"]:
             if (door["id"] == int(self._doorid)):
                 self._state = door["open"]
-        
-        
