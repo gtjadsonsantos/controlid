@@ -14,7 +14,9 @@ This custom integration permits Home Assistant to communicate with `controlid` c
 Paste this property `controlid:` in your configuration file
 ## Services
 
-* **controlid.open_remote_door**: Open doors Remote
+### controlid.open_remote_door
+
+Allows open doors Remote
 
 
 ```yaml
