@@ -81,7 +81,7 @@ sensor:
 ```
 
 [docs api](https://www.controlid.com.br/docs/access-api-pt/acoes/abertura-remota-porta-e-catraca/#exemplo-abrir-rele-idaccessidfitidbox)
-
+ | [postman](https://documenter.getpostman.com/view/7260734/S1LvX9b1?version=latest#00155afb-f5aa-4615-b15b-ed43a57d5836)
 
 ## LICENSE 📝
 
