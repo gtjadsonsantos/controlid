@@ -40,6 +40,12 @@ The controlid sensor platform allows you get current state door
 
 To use your controlid sensor in your installation, add the following to your `configuration.yaml` file:
 
+
+
+> **ip** string `required`
+> 
+> Define ip of your controller
+> 
 > **name** string `required`
 > 
 > Define name to your sensor
