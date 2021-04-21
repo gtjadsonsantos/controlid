@@ -2,7 +2,7 @@ version: '3.6'
 
 services:
   homeassistant:
-    container_name:  controlid.homeassistant.io
+    container_name: controlid.homeassistant.io
     image: homeassistant/home-assistant:latest
     hostname: homeassistant
     volumes:
