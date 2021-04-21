@@ -25,7 +25,7 @@ from .const import (
     DEFAULT_ICON
 )
 
-SCAN_INTERVAL = timedelta(seconds=15)
+SCAN_INTERVAL = timedelta(seconds=2)
 
 PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend(
     {
