@@ -12,9 +12,11 @@ This custom integration permits Home Assistant to communicate with `controlid` c
 ## GETTING STARTED
 
 Paste this property `controlid:` in your configuration file
-## SERVICES AVAILABLE
+## Services
 
-* **controlid.open_remote_door**: Open doors Remote
+### controlid.open_remote_door
+
+Allows open doors Remote
 
 
 ```yaml
@@ -32,9 +34,56 @@ actions:
     parameters: allow=clockwise or allow=both
 ```
 
+## Platforms
+
+### Sensor
+
+The controlid sensor platform allows you get current state door
+
+To use your controlid sensor in your installation, add the following to your `configuration.yaml` file:
+
+
+
+> **ip** string `required`
+> 
+> Define ip of your controller
+> 
+> **name** string `required`
+> 
+> Define name to your sensor
+> 
+> **icon** string `(optional)`
+> 
+> Define icon for your sensor. By default is `mdi:door`
+> 
+> **username** string `required`
+> 
+> Define username for connection with controller.
+> 
+> **passowrd** string `required`
+> 
+> Define password for connection with at controller.
+> 
+> **doorid** string `required`
+> 
+> Choose doorid for get current value 
+
+
+Example ballow, get the current state of door 1
+
+```yaml
+sensor:
+  - platform: controlid
+    ip: 192.168.0.1
+    name: "Your sensor name"
+    username: admin
+    password: admin
+    doorid: "1"
+
+```
 
 [docs api](https://www.controlid.com.br/docs/access-api-pt/acoes/abertura-remota-porta-e-catraca/#exemplo-abrir-rele-idaccessidfitidbox)
-
+ | [postman](https://documenter.getpostman.com/view/7260734/S1LvX9b1?version=latest#00155afb-f5aa-4615-b15b-ed43a57d5836)
 
 ## LICENSE 📝
 
