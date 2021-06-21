@@ -2,25 +2,23 @@ from requests import post
 import json
 
 from .helper import auth
+
 from .const import (
     DOMAIN
 )
 
+from .doors import (
+    open_remote_door,
+    access,
+    lock,
+    unlock
+)
 
 def setup(hass, config):
-    def open_remote_door(call):
-        ip = call.data.get("ip", "")
-        username = call.data.get("username", "")
-        password = call.data.get("password", "")
-        actions = call.data.get("actions", [])
-
-        headers = { "Content-Type": "application/json" }
-
-        payload = { 'actions': actions }  
-        
-        post("http://"+ip+"/execute_actions.fcgi?session="+auth(ip, username, password), data=json.dumps(payload), headers=headers)
-
 
     hass.services.register(DOMAIN, "open_remote_door", open_remote_door)
+    hass.services.register(DOMAIN, "access", access)
+    hass.services.register(DOMAIN, "lock", lock)
+    hass.services.register(DOMAIN, "unlock", unlock)
 
     return True
