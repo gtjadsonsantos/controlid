@@ -4,6 +4,6 @@
   "documentation": "https://github.com/jadson179/controlid",
   "issue_tracker": "https://github.com/jadson179/controlid/issues",
   "codeowners": ["@jadson179"],
-  "version": "0.1.0",
+  "version": "2021.1.0",
   "iot_class":"local_push"
 }
