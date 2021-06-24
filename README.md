@@ -34,6 +34,58 @@ actions:
     parameters: allow=clockwise or allow=both
 ```
 
+### controlid.access
+
+Allows open doors
+
+
+```yaml
+ip: 192.168.0.1
+username: admin
+password: admin
+actions:
+  - action: door
+    parameters: door=1
+  - action: sec_box
+    parameters: 'id=65793, reason=3'
+  - action: open_collector
+    parameters: ''
+  - action: catra
+    parameters: allow=clockwise or allow=both
+```
+
+### controlid.unlock
+
+Allow unlock door
+
+
+```yaml
+ip: 192.168.0.1
+username: admin
+password: admin
+actions:
+  - action: door 
+    parameters: door=1,timeout=0
+```
+
+
+### controlid.lock
+
+Allow lock door
+
+
+```yaml
+ip: 192.168.0.1
+username: admin
+password: admin
+actions:
+  - action: door 
+    parameters: door=1,timeout=-1
+```
+
+
+## Platforms
+
 ## Platforms
 
 ### Sensor
