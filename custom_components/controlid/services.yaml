@@ -23,4 +23,63 @@ open_remote_door:
           parameters: allow=clockwise or allow=both
           
           
+access:
+  description: Abre portas remotamente.
+  fields:
+    ip: 
+      description: "ip of controller"
+      example: "192.168.0.1"
+    username: 
+      description: "username of controller"
+      example: "admin"
+    password: 
+      description: "password of controller"
+      example: "admin"
+    actions:
+      description: "List actions"
+      example: >
+        - action: door 
+          parameters: door=1
+        - action: sec_box 
+          parameters: id=65793, reason=3
+        - action: open_collector 
+          parameters: ""
+        - action: catra 
+          parameters: allow=clockwise or allow=both
+          
+unlock:
+  description: Keeps unlock door
+  fields:
+    ip: 
+      description: "ip of controller"
+      example: "192.168.0.1"
+    username: 
+      description: "username of controller"
+      example: "admin"
+    password: 
+      description: "password of controller"
+      example: "admin"
+    actions:
+      description: "List actions"
+      example: >
+        - action: door 
+          parameters: door=1,timeout=0
+    
+lock:
+  description: Lock door
+  fields:
+    ip: 
+      description: "ip of controller"
+      example: "192.168.0.1"
+    username: 
+      description: "username of controller"
+      example: "admin"
+    password: 
+      description: "password of controller"
+      example: "admin"
+    actions:
+      description: "List actions"
+      example: >
+        - action: door 
+          parameters: door=1,timeout=-1
     
