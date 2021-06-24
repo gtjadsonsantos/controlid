@@ -1,8 +1,3 @@
-from requests import post
-import json
-
-from .helper import auth
-
 from .const import (
     DOMAIN
 )
